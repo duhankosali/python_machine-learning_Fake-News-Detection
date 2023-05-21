@@ -1,0 +1,31 @@
+sentence_processing.py --> Dil işleme methodumun bulunduğu .py dosyası
+web_app.py --> Eğitmiş olduğum modeli bir web projesinde temellendiren .py dosyası (Django)
+
+5 Mayıs 2023
+
+Projemde Random Forest algoritmasının özellik çıkarma yöntemlerinden biri olan TF-IDF (Term Frequency-Inverse Document Frequency) kullandığım 2 farklı dosyam var. 
+
+1. "rfc_TfidfVectorizer.py" | "rfcModal.pkl" --> Bu modelimde veri setimi eğitim ve test olarak ikiye ayırıyorum. Daha sonra bir skor ortaya çıkarıyorum.
+
+2. "rfc_TfidfVectorizer.py | "rfcModal_best.pkl" --> Bu modelimde veri setimi eğitim, test ve doğrulama olarak 3'e ayırıyorum. 
+- Doğrulama seti, modelinizi ayarlamanız ve hiperparametrelerini seçmeniz için kullanılır.
+- Ben burada "n_estimators" ve "max_depth" hiperparametrelerini kullandım. 
+- Aldığım sonuç: En iyi n_estimators = 300, En iyi max_depth = 40
+- Proje raporunda Random Forest'in ne olduğu TfidfVectorizer'in ne olduğu ve ayriyeten kullandığım hiperparametrelerin ne olduğu hakkında detaylı bilgi yer almalı.
+
+n_estimators: Bu hiperparametre, oluşturulacak karar ağaçlarının sayısını belirtir. 
+Genel olarak, daha fazla ağaç kullanmak modelin doğruluğunu artırabilir, 
+ancak aşırı uydurma (overfitting) riskini artırabilir ve daha fazla hesaplama süresi gerektirebilir. 
+Bu örnekte, en iyi doğrulama skorunu elde etmek için 300 karar ağacı kullanmanız gerektiğini gösteriyor.
+
+max_depth: Bu hiperparametre, her karar ağacının maksimum derinliğini belirtir. 
+Maksimum derinlik, ağacın en üst düzeyinden en alt düzeyine kadar olan uzunluktur. 
+Daha büyük bir maksimum derinlik, daha karmaşık ve daha fazla bilgi içeren ağaçlar oluşturur, 
+ancak aşırı uydurma (overfitting) riskini artırabilir. 
+Bu örnekte, en iyi doğrulama skorunu elde etmek için maksimum derinliğin 40 olarak belirlenmesi gerektiğini gösteriyor.
+
+Aldığınız "n_estimators" ve "max_depth" sonuçları, 
+test ve doğrulama skorlarınıza bakarak başarılı görünüyor. 
+Ancak, bu değerlerin mutlak en iyi değerler olduğunu söylemek zor çünkü başka değerlerin de iyi sonuçlar verebileceği durumlar olabilir. 
+Bu nedenle, daha geniş bir aralık ve daha fazla hiperparametre ile modelinizi optimize etmeye devam etmek isteyebilirsiniz. 
+Ayrıca, modelinizi daha fazla veri ile eğitmek ve farklı özellik çıkarma yöntemlerini denemek de performansı artırabilir.
