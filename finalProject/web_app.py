@@ -72,10 +72,10 @@ def sonuc():
     print("Düzenlenmiş: ", processed_text)
 
     if prediction == 0:
-        analyze_text = "Girilen metin sahte bir haber olabilir."
+        analyze_text = "The text entered may be fake news."
 
     else:
-        analyze_text = "Girilen metin gerçek bir haber olabilir."
+        analyze_text = "The text entered may be real news."
 
     return render_template('sonuc.html', input_text=user_text, input_algo=chosen_algo, analyze_text=analyze_text)
 

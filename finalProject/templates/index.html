@@ -67,22 +67,22 @@
   }
     </style>
   <head>
-    <title>Sahte Haber Analiz Uygulaması</title>
+    <title>Fake News Detection Web Application</title>
     
   </head>
   <body>
     <header>
       <div class="logo">
         <img src="logo.png" alt="logo">
-        <h1>Sahte Haber Analiz Uygulaması</h1>
+        <h1>Fake News Detection Web Application</h1>
         
       </div>
     </header>
     <main>
-      <h2 class="title">Haber Metni Analizi</h2>
+      <h2 class="title">News Text Analysis</h2>
       <form action="/sonuc" method="POST">
         <div>
-          <label for="algo">NLP Algoritması:</label>
+          <label for="algo">Algorithm:</label>
           <select id="algo" name="algo" onchange="toggleVectorizerMethod()">
             <option value="LSTM">LSTM</option>
             <option value="RFC">RFC</option>
@@ -98,13 +98,13 @@
         </div>
         <br>
         <div>
-          <label for="input-text">Haber Metni:</label>
+          <label for="input-text">News Text:</label>
           <textarea id="news" name="news" rows="10" cols="50"></textarea>
         </div>
         <br>
         <button id="myButton" type="submit" class="analyze-button" style="display:none;"></button>
       </form>
-      <button onclick="analyzeMethod()" type="submit" class="analyze-button">Analiz Et</button>
+      <button onclick="analyzeMethod()" type="submit" class="analyze-button">Analyze</button>
     </main>
   </body>
 </html>
@@ -115,7 +115,7 @@
         var textArea = document.getElementById("news").value;
         if(textArea.length<=0)
         {
-          alert("Bu alan boş bırakılamaz!");
+          alert("This field cannot be left blank!");
           return;
         }
         else
